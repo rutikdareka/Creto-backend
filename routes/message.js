@@ -59,6 +59,6 @@ router.post("/createMsg", createMessage);
  * @param {string} req.body.getMessageids - get exist conversations chat
    @returns {object} An object containing the user's authentication status.
 */
-router.get("/getMsg", getMessage);
+router.get("/getMsg", fetchuser, getMessage);
 
 module.exports = router;

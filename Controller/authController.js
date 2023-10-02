@@ -7,7 +7,7 @@ const {
   sendmailuser,
 } = require("../utils/sendEmailTouser");
 const client = require("../lib/redis.connection");
-const Genrate = require("../helper/jsonToken.auth");
+const { Genrate } = require("../helper/jsonToken.auth");
 
 async function signupnuser(req, res) {
   try {
@@ -230,7 +230,6 @@ async function googlelogin(req, res, next) {
       )
       .then((res) => {
         data = res.data;
-        console.log(data);
       })
       .catch((err) => console.log("err"));
 

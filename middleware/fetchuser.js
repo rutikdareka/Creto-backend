@@ -1,6 +1,4 @@
-var jwt = require("jsonwebtoken");
-const SECRET = "Rutik@goodboy$123";
-const verifyToken = require("../helper/jsonToken.auth");
+const { verifyToken } = require("../helper/jsonToken.auth");
 
 const fetchuser = (req, res, next) => {
   try {

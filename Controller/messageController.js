@@ -192,13 +192,14 @@ module.exports = {
     try {
       const { user1, user2 } = req.query;
 
-      console.log(user1, user2);
+      console.log(req.user);
 
       let sql =
         "select * from messages where (sender = $1 and receiver = $2) or (sender = $2 and receiver = $1)";
 
       const findQuery = await db.query(sql, [user1, user2]);
 
+      // check for user sender
       const allmessages = findQuery.rows.map((items) => {
         let obj = {
           avatar: items?.userdata.avatar,
