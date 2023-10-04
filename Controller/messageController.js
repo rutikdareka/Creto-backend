@@ -192,8 +192,6 @@ module.exports = {
     try {
       const { user1, user2 } = req.query;
 
-      console.log(req.user);
-
       let sql =
         "select * from messages where (sender = $1 and receiver = $2) or (sender = $2 and receiver = $1)";
 

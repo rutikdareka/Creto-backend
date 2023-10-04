@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "build": "build"
   },
   "dependencies": {
     "async-twitter-login": "^0.0.1",
