@@ -23,7 +23,7 @@ app.use(express.urlencoded({ extended: false }));
 
 // Individual routes
 app.use("/api/v1/auth", require("./routes/auth"));
-app.use("/api/v1/user", require("./routes/user"));
+app.use("/api/v1/user", require("./routes/personalization"));
 app.use("/api/v1/message", require("./routes/message"));
 
 app.get("/", async (req, res, next) => {
