@@ -10,7 +10,7 @@ var chat = require("./Websocket/chat");
 const { Notfoundpag, ErrorHandle } = require("./middleware/ErrorHandling");
 const WebSocket = require("ws");
 const helmet = require("helmet");
-const PORT = 5000;
+const PORT = process.env.PORT || 3000;
 const accessLogStream = fs.createWriteStream("./access.log", { flags: "a" });
 
 //Middleware
@@ -43,16 +43,4 @@ server.listen(PORT, async (err, done) => {
   }
   console.log(`Creto Ready to accept connections on ${PORT}`);
   chat.startSocketServer(server);
-});
-
-const wss = new WebSocket.Server({ server: server });
-
-wss.on("connection", (ws) => {
-  console.log(`Received`);
-
-  ws.send("Hi Hello Darling");
-
-  ws.on("close", () => {
-    console.log("Client disconnected");
-  });
 });
