@@ -1,1 +1,0 @@
-const wintson = require("wintson");

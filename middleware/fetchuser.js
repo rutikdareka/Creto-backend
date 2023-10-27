@@ -2,6 +2,11 @@ const { verifyToken } = require("../helper/jsonToken.auth");
 
 const fetchuser = (req, res, next) => {
   try {
+
+    /**
+     * @header token-get
+     */
+
     const key = req.header("auth-token");
     if (!key) {
       return res.send("please authontication valid token");

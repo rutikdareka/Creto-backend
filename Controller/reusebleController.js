@@ -1,4 +1,4 @@
-const db = require("../lib/postgres.connection");
+const postgressdb = require("../lib/postgres.connection");
 
 module.exports = {
   searchUser: async (req, res) => {
